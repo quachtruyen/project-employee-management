@@ -112,13 +112,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+# Thay đổi múi giờ mặc định thành múi giờ của Việt Nam
+TIME_ZONE = 'Asia/Ho_Chi_Minh'
 
-TIME_ZONE = 'UTC'
+# Bật tính năng sử dụng múi giờ đã thiết lập
+USE_TZ = True
 
 USE_I18N = True
 
-USE_TZ = True
-
+LANGUAGES = [
+    ('en', 'English'),
+    ('vi', 'Vietnamese'),
+    # Thêm các ngôn ngữ khác nếu cần
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
