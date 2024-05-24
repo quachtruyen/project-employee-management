@@ -5,8 +5,8 @@ from position.models import position
 # Create your models here.
 class employee(models.Model):
     emp_id = models.AutoField(primary_key=True)
-    department_id = models.ForeignKey(department, default=None, on_delete=models.CASCADE)
-    position_id = models.ForeignKey(position, default=None, on_delete=models.CASCADE)
+    department = models.ForeignKey(department, default=None, on_delete=models.CASCADE)
+    position = models.ForeignKey(position, default=None, on_delete=models.CASCADE)
     first_name = models.CharField(null=False, max_length=100)
     last_name = models.CharField(null=False, max_length=100)
     full_name = models.CharField(null=False, max_length=200)

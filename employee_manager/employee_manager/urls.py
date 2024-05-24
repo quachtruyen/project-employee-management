@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from department import views as department
+from employee import views as employee
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', department.get_department),
-    path('department/<int:department_id>/', department.get_department_by_id, name='get_department'),
+    path('department/<int:id>/', department.get_department_by_id),
 ]
