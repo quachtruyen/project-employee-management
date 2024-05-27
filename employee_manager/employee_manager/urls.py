@@ -21,7 +21,7 @@ from employee import views as employee
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', department.get_department),
+    path('', department.get_department, name = "department_list"),
     path('department/<int:id>/', department.get_department_by_id, name="get_department_by_id"),
     path('add-department/', department.add_Department, name='add_Department'),
 ]
