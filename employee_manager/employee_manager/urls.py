@@ -17,12 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from department import views as department
+from login import views as login
 from employee import views as employee
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', department.get_login_formn),
-    path('department', department.get_department, name='department_list'),
+    path('', login.get_login_formn),
+    path('login', login.handle_btn_login, name='login'),
+    path('department', department.get_department, name ='department_list'),
     path('department/<int:id>/', department.get_department_by_id, name='get_department_by_id'),
     path('add-department/', department.add_Department, name='add_Department'),
 ]
