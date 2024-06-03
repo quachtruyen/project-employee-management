@@ -10,9 +10,6 @@ def get_department(request):
     department_list = department_model.objects.filter().order_by('department_id')
     return render(request, 'department/department.html', {'department_list' : department_list})
 
-def get_login_formn(request):
-    return render(request, 'login/login.html')
-
 def get_department_by_id(request, id):
     employee_list = employee_model.objects.filter(department_id = id)
     department = department_model.objects.get(department_id = id)
