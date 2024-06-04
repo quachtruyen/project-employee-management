@@ -3,7 +3,12 @@
 {% block title %}
 Add Emplooyee
 {% endblock %}   
+{% comment %} {% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/style_dp.css' %}">
+{% endblock %} {% endcomment %}
+
 {% block content %}
+
     <h1>Add Employee</h1>
     <form method="post">
         {% csrf_token %}

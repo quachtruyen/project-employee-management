@@ -5,45 +5,16 @@ Home - My Django Project
 {% endblock %}
 
 {% block content %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/style_dp.css' %}">
+{% endblock %}
 
 <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
 {% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 100px;">
     <!-- Form search -->
-    <h3 class="text-center mx-auto" style="color: #C71585; margin-top: 23px; font-size: 28px; font-weight: bold;"> DANH SÁCH PHÒNG BAN </h3>
     <!-- Button Account -->
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,6 +35,7 @@ Home - My Django Project
         </ul>
     </div>
 </nav> {% endcomment %}
+<h3 class="text-center mx-auto" style="color: #C71585; margin-top: 23px; font-size: 28px; font-weight: bold;"> DANH SÁCH PHÒNG BAN </h3>
 
 <form class="d-flex justify-content-center"> <!-- Thêm justify-content-center để căn giữa -->
     <input class="form-control " type="search" placeholder="--" aria-label="" style="width: 250px; margin-right: 10px;">
