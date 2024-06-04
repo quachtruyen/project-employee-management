@@ -2,9 +2,10 @@
 {% load static %}
 {% block title %}
 Home - My Django Project
-{% endblock %}            
+{% endblock %}
 
 {% block content %}
+
 <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -42,52 +43,59 @@ Home - My Django Project
 
 {% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 100px;">
     <!-- Form search -->
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="--" aria-label="" style="width: 250px; margin-right: 10px;">
-        <button class="btn btn-outline-success text-dark border-secondary" type="submit" style="background-color: #FFB6C1; width: 120px;">TÌM KIẾM</button>
-    </form>
+    <h3 class="text-center mx-auto" style="color: #C71585; margin-top: 23px; font-size: 28px; font-weight: bold;"> DANH SÁCH PHÒNG BAN </h3>
     <!-- Button Account -->
-    <div class="navbar-nav ml-auto">
-        <div class="dropdown">
-            <a class="nav-link btn btn-outline-primary text-dark border-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #FFB6C1;">
-                Account
-            </a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">MY ACCOUNT</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">ĐĂNG XUẤT</a>
-            </div>
-        </div>
+    <div class="collapse navbar-collapse" 
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link btn btn-outline-primary text-dark border-secondary dropdown-toggle" id="navbarSupportedContent" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #FFB6C1;">
+                    ACCOUNT
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">MY ACCOUNT</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">ĐĂNG XUẤT</a>
+                </div>
+            </li>
+        </ul>
     </div>
 </nav> {% endcomment %}
 
-<h3 class="text-center" style="color: #C71585; margin-top: 60px; font-size: 28px; font-weight: bold;"> DANH SÁCH PHÒNG BAN 
-    <button onclick="" class="btn btn-pink float-right border-secondary "style="background-color: #FFB6C1; width: 120px;" >Thêm</button>
-</h3>
+<form class="d-flex justify-content-center"> <!-- Thêm justify-content-center để căn giữa -->
+    <input class="form-control " type="search" placeholder="--" aria-label="" style="width: 250px; margin-right: 10px;">
+    <button class="btn btn-outline-success text-dark border-secondary" type="submit" style="background-color: #FFB6C1; width: 120px;">TÌM KIẾM</button>
+</form>
+<div class="d-flex justify-content-end">
+    <button class="btn btn-outline-success text-dark border-secondary" style="background-color: #FFB6C1; width: 120px;">THÊM</button> 
+</div>
+
 <div style="margin-top: 30px;">
-<table class="table table-bordered" style="background-color: #FFB6C1;">
-    <thead style="background-color: pink;">
-        <tr>
-            <th style="background-color: #DB7093;">ID</th>
-            <th style="background-color: #DB7093;">TÊN PHÒNG BAN</th>
-            <th style="background-color: #DB7093;">NGÀY TẠO</th>
-            <th style="background-color: #DB7093;">CHỨC NĂNG</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for department in department_list %}
-        <tr>
-            <td style="background-color: #FFB6C1;">{{ department.department_id }}</td>
-            <td style="background-color: #FFB6C1;">{{ department.name }}</td>
-            <td style="background-color: #FFB6C1;">{{ department.create_date }}</td>
-            <td style="background-color: #FFB6C1;">
-                <a href="/department/{{department.department_id}}/" class="btn btn-light">Chi tiết</a>
-                <a href="#" class="btn btn-danger">XÓA</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <table class="table table-bordered" style="background-color: #FFB6C1;">
+        <thead style="background-color: pink;">
+            <tr>
+                <th style="background-color: #DB7093;">ID</th>
+                <th style="background-color: #DB7093;">TÊN PHÒNG BAN</th>
+                <th style="background-color: #DB7093;">NGÀY TẠO</th>
+                <th style="background-color: #DB7093;">CHỨC NĂNG</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for department in department_list %}
+            <tr>
+                <td style="background-color: #FFB6C1;">{{ department.department_id }}</td>
+                <td style="background-color: #FFB6C1;">{{ department.name }}</td>
+                <td style="background-color: #FFB6C1;">{{ department.create_date }}</td>
+                <td style="background-color: #FFB6C1;">
+                    <a href="/department/{{department.department_id}}/" class="btn btn-light">Chi tiết</a>
+                    <a href="#" class="btn btn-danger">XÓA</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}
