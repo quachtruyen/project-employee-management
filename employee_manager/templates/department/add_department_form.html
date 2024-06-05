@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 Add Emplooyee
 {% endblock %}   
-{% comment %} {% block extra_head %}
+{% block extra_head %}
     <link rel="stylesheet" href="{% static 'css/style_dp.css' %}">
-{% endblock %} {% endcomment %}
+{% endblock %}
 
 {% block content %}
-
+{% include 'header.html' %}
     <h1>Add Employee</h1>
     <form method="post">
         {% csrf_token %}
