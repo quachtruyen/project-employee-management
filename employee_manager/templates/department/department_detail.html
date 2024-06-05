@@ -11,7 +11,7 @@ Detail Department - My Django Project
 {% endblock %}
 
 {% block content %}
-<body>
+{% include 'header.html' %}
   <h1 class="text-left" style="color: #C71585; margin-top: 20px;">{{ department.name }}</h1>
   <div class="table-responsive" style="margin-top: 40px;">
     <table >
@@ -43,5 +43,4 @@ Detail Department - My Django Project
       </tbody>
     </table>
   </div>
-</body>
 {% endblock %}

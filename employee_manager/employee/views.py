@@ -4,8 +4,8 @@ from .forms import EmployeeForm
 from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
-def get_employee(request):
-    employee_list = employee_model.objects.filter().order_by('emp_id')
+def get_employee(request, offset):
+    employee_list = employee_model.objects.filter().order_by('emp_id')[offset:offset+20]
     return render(request, 'employee/employee.html', {'employee_list' : employee_list})
 
 def get_employee_by_id(request, id):
