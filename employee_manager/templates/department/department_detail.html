@@ -12,9 +12,10 @@ Detail Department - My Django Project
 
 {% block content %}
 <body>
-  
+  <h1 class="text-left" style="color: #C71585; margin-top: 20px;">{{ department.name }}</h1>
   <div class="table-responsive" style="margin-top: 40px;">
-    <table class="table table-striped table-bordered">
+    <table >
+      
       <thead>
         <tr>
           <th>ID</th>
@@ -24,7 +25,7 @@ Detail Department - My Django Project
           <th>Tuổi</th>
           <th>Ngày Tạo</th>
           <th>Ngày Sinh</th>
-          <th>Chức Năng</th>
+           
         </tr>
       </thead>
       <tbody>
@@ -37,7 +38,7 @@ Detail Department - My Django Project
           <td>{{ employee.age }}</td>
           <td>{{ employee.create_date }}</td>
           <td>{{ employee.date_of_birth }}</td>
-          <td>...</td>  </tr>
+           
         {% endfor %}
       </tbody>
     </table>
