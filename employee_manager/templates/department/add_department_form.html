@@ -2,15 +2,16 @@
 {% load static %}
 
 {% block title %}
-Add Emplooyee
+Add Department
 {% endblock %}   
 {% block extra_head %}
     <link rel="stylesheet" href="{% static 'css/style_dp.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_add.css' %}">
 {% endblock %}
 
 {% block content %}
 {% include 'header.html' %}
-    <h1>Add Employee</h1>
+    <h1>Add Department</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
