@@ -1,0 +1,35 @@
+body {
+    background-color: #FFB6C1; /* Đặt màu nền của trang */
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #FFB6C1; /* Đặt màu chữ của tiêu đề */
+    text-align: center;
+}
+
+form {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #FFB6C1; /* Đặt màu nền cho nút */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ 
+
+header {
+    background-color: #FFB6C1; /* Đặt màu nền cho phần header */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
