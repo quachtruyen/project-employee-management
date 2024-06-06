@@ -4,6 +4,7 @@ from django.db import models
 class position(models.Model):
     position_id = models.AutoField(primary_key=True)
     name = models.CharField(null=False, max_length=200)
+    description = models.CharField(null=True, max_length=2000)
     create_date = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):

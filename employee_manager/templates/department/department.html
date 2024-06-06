@@ -7,6 +7,11 @@ Home - My Django Project
 {% block content %}
 {% block extra_head %}
     <link rel="stylesheet" href="{% static 'css/style_dp.css' %}">
+    <script src="{% static 'js/department.js' %}"></script>
+    <script>
+        // Định nghĩa URL trong một biến JavaScript
+        const csrfToken = "{{ csrf_token }}";
+    </script>
 {% endblock %}
 
 {% include 'header.html' %}
@@ -44,7 +49,7 @@ Home - My Django Project
     <button class="btn btn-outline-success text-dark border-secondary" type="submit" style="background-color: #FFB6C1; width: 120px;">TÌM KIẾM</button>
 </form>
 <div class="d-flex justify-content-end">
-    <button class="btn btn-outline-success text-dark border-secondary" style="background-color: #FFB6C1; width: 120px;">THÊM</button> 
+    <button onclick="handle_add_department()"class="btn btn-outline-success text-dark border-secondary" style="background-color: #FFB6C1; width: 120px;">THÊM</button> 
 </div>
 
 <div style="margin-top: 30px;">
@@ -53,6 +58,7 @@ Home - My Django Project
             <tr>
                 <th style="background-color: #DB7093;">ID</th>
                 <th style="background-color: #DB7093;">TÊN PHÒNG BAN</th>
+                <th style="background-color: #DB7093;">MÔ TẢ</th>
                 <th style="background-color: #DB7093;">NGÀY TẠO</th>
                 <th style="background-color: #DB7093;">CHỨC NĂNG</th>
             </tr>
@@ -62,6 +68,7 @@ Home - My Django Project
             <tr>
                 <td style="background-color: #FFB6C1;">{{ department.department_id }}</td>
                 <td style="background-color: #FFB6C1;">{{ department.name }}</td>
+                <td style="background-color: #FFB6C1;">{{ department.description }}</td>
                 <td style="background-color: #FFB6C1;">{{ department.create_date }}</td>
                 <td style="background-color: #FFB6C1;">
                     <a href="/department/{{department.department_id}}/" class="btn btn-light">Chi tiết</a>

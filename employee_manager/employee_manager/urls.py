@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login.get_login_formn),
     path('login', login.handle_btn_login, name='login'),
-    path('department/', department.get_department, name ='department_list'),
-    path('department/<int:id>/', department.get_department_by_id, name='get_department_by_id'),
-    path('add-department/', department.add_Department, name='add_Department'),
+    path('department/', department.getDepartment, name ='department_list'),
+    path('department/<int:id>/', department.getDepartmentById, name='get_department_by_id'),
+    path('add-department/', department.addDepartment, name='add_department'),
+    # path('add-department/', department.click_add_department, name='click_add_department'),
 ]

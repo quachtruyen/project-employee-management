@@ -1,4 +1,4 @@
-function handleBtnLogin() {
+function handle_btn_login() {
     console.log("click login")
     alert("1111");
     fetch(loginUrl, {

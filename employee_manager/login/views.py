@@ -7,5 +7,5 @@ def get_login_formn(request):
 
 def handle_btn_login(request):
     if request.method == 'POST':
-        # Xử lý sự kiện click ở đây
+        # xử lý click
         return HttpResponse("Button clicked!")
